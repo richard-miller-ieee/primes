@@ -1,0 +1,15 @@
+name: Build Latex Document
+on: 
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
