@@ -11,26 +11,30 @@
 \end{center}
 
 
-For any number $N$ can be expressed as the the product of prime factors:
+Any number $N$, can be expressed as the product of prime numbers.  
+Including some primes that maybe repeated:
 $$
-N = p_1 \times p_2 \times \cdots \times p_i
+N = q_1 \times q_2 \times \cdots \times q_i
 $$
 
-For example, when $N$ is $12$ we get:
+For example, if $N = 12$, we get:
 $$
 12 = 2 \times 2 \times 3
 $$
 
-By grouping the same primes together we can express this as:
+By grouping the repeated primes together we can express this as:
 $$
 N = p_1 ^ {e_1} \times p2 ^ {e_2} \times 
 \cdots \times p_i ^ {e_i}
 $$
 
-Again, for example when $N$ is $12$:
+Again, if $N = 12$, we get:
 $$
 N = 2 ^ 2 \times 3 ^ 1
 $$
+where:
+$$e_1 = 2$$
+$$e_2 = 1$$
 
 We can now split each term into two components as follows:
 $$
@@ -40,10 +44,10 @@ p_1 ^ {e_2 - n_2} p_2 ^ {n_2} \times
 \cdots \times 
 p_i ^ {e_i - n_i} p_i ^ {n_i} 
 $$
-where $n_i$ can be any value between $0$ and $e_i$; ie $(e_i + 1)$ different values.
-
+where each $n_i$ can be any value between $0$ and $e_i$; ie $(e_i + 1)$ distinct values.
+\\~
 \par
-By rearranging the above into two terms we get:
+By rearranging the above into two groups we get:
 $$
 N = 
 ( 
@@ -60,18 +64,19 @@ p_2 ^ {e_2 - n_2}
 p_i ^ {e_3 - n_i}
 )
 $$
-where each of the terms represent ALL of the factors of $N$.
-\\~
+
+By selecting different values for the $n_i$'s we can generate many variations of this expression. Each variation produces a pair of terms that multiplies to give $N$ and are therefore factors of $N$.
+Moreover, the expression represents ALL possible ways of producing pairs of terms and hence represents ALL factors of $N$.
+
 \par
-In our example where:
+In our example where $N =12$:
 \begin{eqnarray*}
 N & = & 12\\
-& = & 2 ^ 2 \times 3 ^ 1
+& = & 2 ^ 2 \times 3 ^ 1 \\
+& => & e_1 = 2, e_2 = 1
 \end{eqnarray*}
-and therefore:
-$$e_1 = 2$$
-$$e_2 = 1$$
-we can choose the $n$'s in the following ways:
+
+we can choose the $n_i$'s in 6 different ways as follows:
 \begin{eqnarray*}
 12 &=& (2^0 \cdot 3^0) \times (2^2 \cdot 3^1) : n_1 = 0, n_2 = 0 \\
    &=& (1 \cdot 1) \times (4 \cdot 3) \\
@@ -85,47 +90,49 @@ we can choose the $n$'s in the following ways:
 12 &=& (2^2 \cdot 3^1) \times (2^0 \cdot 3^0) : n_1 = 2, n_2 = 1\\
 \end{eqnarray*}
 
-To find how many ways each term can be constructed for a given $N$ (and therefore given $e_i$'s), we need to determine how many different ways the $n$'s can be chosen. 
-Since each $n_i$ can be any value from $0$ to $e_i$ or $(e_i + 1)$ distinct values, the total number of combinations to choose all $n$'s is:
+To find how many ways pairs can be constructed for a given $N$ (and therefore given $e_i$'s), we need to determine how many different ways the $n_i$'s can be chosen. 
+Since each $n_i$ can be any value from $0$ to $e_i$ or $(e_i + 1)$ distinct values, the total number of combinations to choose all $n_i$'s is:
 $$
 K = (e_1 +1) \times (e_2 + 1) \times \cdots \times (e_i + 1)
 $$
-This gives an expression for the total number of factors for $N$.
+This expression therefore gives the total number of factors for $N$.
 \\~
 \par
 Using our example where $N = 12$, $e_1 = 2$ and $e_2 = 1$, we can calculate $K$:
 \begin{eqnarray*}
-K & = & (2 + 1) ( 1 + 1) \\
+K & = & (e_1 +1) \times (e_2 + 1) \\
+  & = & (2 + 1) ( 1 + 1) \\
   & = & 3 \times 2 \\
   & = & 6 \\
 \end{eqnarray*}
-We can confirm this result by counting the distinct factors of $12$ we we know from brute force to be:
+We can confirm this result by counting the distinct factors of $12$ that we know from brute force to be:
 $$
 1, 2, 3, 4, 6, 12
 $$
 
-Now that we have an expression that relates exponents of the prime factors of $N$ to the total number of factors, we can just it to find $N$s for a given $K$.
+Now that we have an expression that relates exponents of the prime factors of $N$ to the total number of factors, we can use it to find $N$s for any given $K$ and in particular the smallest $N$.
 
+\\~
 \par
-First note that $K$ is expressed as a product of terms which means each term is a factor or $K$. 
-$K$ may have many factorisations, however if we are looking for the smallest $N$, we want our exponents to be as small has possible. 
-Therefore the factorisation we choose will be the prime factorisation.
+First we note that $K$ is itself expressed as a product of terms which means each term is a factor of $K$. 
 
+$K$ may have many factorizations, however if we are looking for the smallest $N$, we want our exponents to be as small has possible. 
+Therefore the factorisation we choose will be the prime factorisation of $K$.
+\\~
 \par
-For example if $K$ is $12$ then:
+For example if $K = 12$ then:
 
 \begin{eqnarray*}
 12 
-& = & ( e_1 + 1) \times ( e_2 + 1 ) \time (e_3+1) \\
+& = & ( e_1 + 1) \times ( e_2 + 1 ) \times (e_3+1) \\
 & = & 3 \times 2 \times 2 \\
 \end{eqnarray*}
 
-given the prime factors of $12$ are $2, 2, 3$. 
-This yields:
+then:
 
 $$e_1 = 2, e_2 = 1, e_3 = 1$$
 
-Plugging these values into our expression for $N$ while selecting the smallest primes for the largest exponents (because we want $N$ to be as small as possible), we get:
+Plugging these values into our expression for $N$ by selecting the smallest primes for the largest exponents (because we want $N$ to be as small as possible), we get:
 
 \begin{eqnarray*}
 N
@@ -135,7 +142,7 @@ N
 & = & 60 \\
 \end{eqnarray*}
 
-which can be verified by brute force methods.
+which can be verified by brute force.
 
 \pagebreak
 \section*{Numerical Results}
