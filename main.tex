@@ -189,7 +189,7 @@ Z(26)   12288
 \section*{Python Code}
 \subsection*{Smallest $N$ with $K$ factors - calculated by factorising $K$}
 \begin{verbatim}
-def factors(n):
+def factorize(n):
     
     factors = [1]
     if n == 1:
@@ -203,25 +203,23 @@ def factors(n):
 
 # factorise lots of number and count the factors
 numbers = []
-for n in range(1,13000):
-    f = factors(n) 
+for n in range(1,3000):
+    factors = factorize(n) 
     numbers.append({
         "N":n,
-        "K":len(f),
-        "factors":f,
+        "K":len(factors),
+        "factors":factors,
     })    
 
 print(f"   K        N Factors")
-for k in range(1,27):       # A - Z
-    letter = chr(64 + k)
+for k in range(1,27):                  # A - Z
     for n in numbers:
         if n["K"] == k:
-            print(f"{letter}({k:2}){n["N"]:8}", n["factors"])
+            print(f"{chr(64+k)}({k:2}){n['N']:8}", n["factors"])
             break
 \end{verbatim}
 
 \section*{smallest $N$ via prime factoring of $K$}
-
 \begin{verbatim}
 small_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23]
 
@@ -243,5 +241,4 @@ for k in range(2,27):
         j += 1
     print(F"{chr(64+k)}({k:2}){N:8}")
 \end{verbatim}
-
 \end{document}
