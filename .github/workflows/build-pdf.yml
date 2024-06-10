@@ -20,7 +20,9 @@ jobs:
           ls -lt
           git config --global user.name 'Richard Miller'
           git config --global user.email 'richard@ieee.org'
+          echo git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          cat .git/config
           git add main.pdf
           git commit -m "Git Hub Action: build latex"
           git push
