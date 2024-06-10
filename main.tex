@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[a4paper, portrait, margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{20pt}
 
@@ -132,7 +133,9 @@ This can be verified by brute force (as shown on next page).
 We now calculate $N$ for any value of $K$.
 
 \pagebreak
-\section*{Numerical Results}
+\pagestyle{fancy}
+\fancyhead[LO]{Numerical Results}
+
 \subsection*{Smallest $N$ with $K$ factors - calculated by brute force}
 \begin{verbatim}
    K        N Factors
@@ -185,12 +188,14 @@ Z(26)   12288
 \end{verbatim}
 
 \pagebreak
+
+\fancyhead[LO]{Python Code}
+\fancyfoot{}
+\fancyfoot[RO]{https://github.com/richard-miller-ieee/primes}
 \setlength{\parskip}{10pt}
-\section*{Python Code}
 \subsection*{Smallest $N$ with $K$ factors - calculated by factorising $K$}
 \begin{verbatim}
 def factorize(n):
-    
     factors = [1]
     if n == 1:
         return factors
