@@ -1,5 +1,8 @@
 name: Build Latex Document
 on: 
+  push:
+    paths:
+    - 'main.tex'
   workflow_dispatch:
   
 jobs:
