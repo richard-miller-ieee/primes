@@ -12,8 +12,9 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: PDF
-          path: main.pdf
+      - name: Commit report
+        run: |
+          git config --global user.name 'Richard Miller'
+          git config --global user.email 'richard@ieee.org'
+          git commit -am "Git Hub Action: build latex"
+          git push
