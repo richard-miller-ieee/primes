@@ -17,7 +17,9 @@ jobs:
           root_file: main.tex
       - name: Commit report
         run: |
+          ls -lt
           git config --global user.name 'Richard Miller'
           git config --global user.email 'richard@ieee.org'
-          git commit -am "Git Hub Action: build latex"
+          git -a main.pdf
+          git commit -m "Git Hub Action: build latex"
           git push
