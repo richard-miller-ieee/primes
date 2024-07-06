@@ -70,20 +70,20 @@ N & = & 12\\
 \end{eqnarray*}
 we can choose the $n_1$ amd $n_2$ in 6 different ways as follows:
 \begin{eqnarray*}
-12 &=& (2^0 \cdot 3^0) \times (2^2 \cdot 3^1) : n_1 = 0, n_2 = 0 \\
+12 &=& (2^0 \cdot 3^0) \times (2^2 \cdot 3^1) \; where \; n_1 = 0, n_2 = 0, (e_1-n_1) = 2, (e_2-n_1) = 1 \\
    &=& (1 \cdot 1) \times (4 \cdot 3) \\
    &=& 1 \times 12 \\
-12 &=& (2^1 \cdot 3^0) \times (2^1 \cdot 3^1) : n_1 = 1, n_2 = 0\\
+12 &=& (2^1 \cdot 3^0) \times (2^1 \cdot 3^1) \; where \; n_1 = 1, n_2 = 0, (e_1-n_1) = 1, (e_2-n_1) = 1\\
    &=& (2 \cdot 1) \times (2 \cdot 3) \\
    &=& 2 \times 6 \\
-12 &=& (2^2 \cdot 3^0) \times (2^0 \cdot 3^1) : n_1 = 2, n_2 = 0\\
+12 &=& (2^2 \cdot 3^0) \times (2^0 \cdot 3^1) \; where \; n_1 = 2, n_2 = 0, (e_1-n_1) = 0, (e_2-n_1) = 1\\
    &=& 4 \times 3 \\
-12 &=& (2^0 \cdot 3^1) \times (2^2 \cdot 3^0) : n_1 = 0, n_2 = 1\\
-   &=& 4 \times 3 \times  \\
-12 &=& (2^1 \cdot 3^1) \times (2^1 \cdot 3^0) : n_1 = 1, n_2 = 1\\
-   &=& 6 \times 2 \times  \\
-12 &=& (2^2 \cdot 3^1) \times (2^0 \cdot 3^0) : n_1 = 2, n_2 = 1\\
-   &=& 12 \times 1 \times  \\
+12 &=& (2^0 \cdot 3^1) \times (2^2 \cdot 3^0) \; where \; n_1 = 0, n_2 = 1, (e_1-n_1) = 2, (e_2-n_1) = 0 \\
+   &=& 4 \times 3  \\
+12 &=& (2^1 \cdot 3^1) \times (2^1 \cdot 3^0) \; where \; n_1 = 1, n_2 = 1, (e_1-n_1) = 1, (e_2-n_1) = 0\\
+   &=& 6 \times 2  \\
+12 &=& (2^2 \cdot 3^1) \times (2^0 \cdot 3^0) \; where \; n_1 = 2, n_2 = 1, (e_1-n_1) = 0, (e_2-n_1) = 0\\
+   &=& 12 \times 1 \\
 \end{eqnarray*}
 To find how many ways pairs can be constructed for any given $N$ (and therefore given $e_i$'s), we need to determine how many different all the ways the $n_i$'s can be chosen. 
 Since each $n_i$ can be range from $0$ to $e_i$ or $(e_i + 1)$ distinct values, the total number of combinations to choose all $n_i$'s is:
